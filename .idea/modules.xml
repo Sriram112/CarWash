@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/API-gateway/API-gateway.iml" filepath="$PROJECT_DIR$/API-gateway/API-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/Discovery-server/Discovery-server.iml" filepath="$PROJECT_DIR$/Discovery-server/Discovery-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/admin/admin.iml" filepath="$PROJECT_DIR$/admin/admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/car wash.iml" filepath="$PROJECT_DIR$/.idea/car wash.iml" />
       <module fileurl="file://$PROJECT_DIR$/order/order.iml" filepath="$PROJECT_DIR$/order/order.iml" />
       <module fileurl="file://$PROJECT_DIR$/washer/washer.iml" filepath="$PROJECT_DIR$/washer/washer.iml" />

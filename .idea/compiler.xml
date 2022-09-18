@@ -7,15 +7,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="washer" />
+        <module name="admin" />
         <module name="API-gateway" />
         <module name="order" />
         <module name="Discovery-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="admin" target="18" />
       <module name="API-gateway" target="18" />
       <module name="Discovery-server" target="18" />
       <module name="order" target="18" />
+      <module name="user" target="11" />
       <module name="washer" target="18" />
     </bytecodeTargetLevel>
   </component>
@@ -23,7 +26,9 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="API-gateway" options="-parameters" />
       <module name="Discovery-server" options="-parameters" />
+      <module name="admin" options="-parameters" />
       <module name="order" options="-parameters" />
+      <module name="user" options="-parameters" />
       <module name="washer" options="-parameters" />
     </option>
   </component>

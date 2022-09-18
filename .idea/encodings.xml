@@ -5,8 +5,10 @@
     <file url="file://$PROJECT_DIR$/API-gateway/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Discovery-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Discovery-server/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/admin/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/order/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/order/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/washer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/washer/src/main/resources" charset="UTF-8" />
   </component>

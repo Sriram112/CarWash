@@ -7,6 +7,8 @@
         <option value="$PROJECT_DIR$/washer/pom.xml" />
         <option value="$PROJECT_DIR$/API-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/Discovery-server/pom.xml" />
+        <option value="$PROJECT_DIR$/admin/pom.xml" />
+        <option value="$PROJECT_DIR$/user/pom.xml" />
       </list>
     </option>
   </component>

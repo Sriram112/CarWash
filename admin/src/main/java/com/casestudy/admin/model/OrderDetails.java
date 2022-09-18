@@ -1,4 +1,4 @@
-package com.casestudy.order.models;
+package com.casestudy.admin.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
