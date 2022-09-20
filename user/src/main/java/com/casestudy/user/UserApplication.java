@@ -1,6 +1,6 @@
-package com.casestudy.admin;
+package com.casestudy.user;
 
-import com.casestudy.admin.repository.WashPackRepo;
+import com.casestudy.user.Repository.RatingRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,9 +19,9 @@ import java.util.Collections;
 @EnableEurekaClient
 @EnableSwagger2
 @SpringBootApplication
-public class AdminApplication {
+public class UserApplication{
 	@Autowired
-	private WashPackRepo wpr;
+	private RatingRepo rr;
 
 	@Bean
 	@LoadBalanced
@@ -29,15 +29,15 @@ public class AdminApplication {
 		return new RestTemplate();
 	}
 	public static void main(String[] args) {
-		SpringApplication.run(AdminApplication.class, args);
+		SpringApplication.run(UserApplication.class, args);
 	}
+
 	@Bean
 	public Docket SwaggerConfig(){
-		//Returns a prepared docket instance
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
-				.paths(PathSelectors.ant("/admins/**"))
-				.apis(RequestHandlerSelectors.basePackage("casestudy.admin"))
+				.paths(PathSelectors.ant("/users/**"))
+				.apis(RequestHandlerSelectors.basePackage("casestudy.user"))
 				.build()
 				.apiInfo(apiinform());
 

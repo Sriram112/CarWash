@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="washer" />
         <module name="admin" />
+        <module name="user" />
         <module name="API-gateway" />
         <module name="order" />
         <module name="Discovery-server" />
@@ -18,7 +19,7 @@
       <module name="API-gateway" target="18" />
       <module name="Discovery-server" target="18" />
       <module name="order" target="18" />
-      <module name="user" target="11" />
+      <module name="user" target="18" />
       <module name="washer" target="18" />
     </bytecodeTargetLevel>
   </component>

@@ -1,4 +1,4 @@
-package com.casestudy.order.models;
+package com.casestudy.user.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -40,7 +40,6 @@ public class OrderDetails {
         this.status = status;
         this.cars = cars;
     }
-
 
     //Getters and Setters
     public String getUseremailid() {
@@ -120,5 +119,4 @@ public class OrderDetails {
                 ", cars=" + cars +
                 '}';
     }
-
 }
