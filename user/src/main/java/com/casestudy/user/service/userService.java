@@ -1,6 +1,6 @@
 package com.casestudy.user.service;
 
-import com.casestudy.user.WrapperModel.OrderReceipt;
+import com.casestudy.user.wrappermodel.OrderReceipt;
 import com.casestudy.user.model.OrderDetails;
 import com.casestudy.user.model.WashPacks;
 import com.casestudy.washer.exceptionHandler.API_requestException;

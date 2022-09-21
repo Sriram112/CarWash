@@ -1,6 +1,6 @@
 package com.casestudy.user.controller;
 
-import com.casestudy.user.WrapperModel.OrderReceipt;
+import com.casestudy.user.wrappermodel.OrderReceipt;
 import com.casestudy.user.model.OrderDetails;
 import com.casestudy.user.model.Ratings;
 import com.casestudy.user.model.WashPacks;
@@ -18,7 +18,7 @@ public class UserController {
     @Autowired
     private RatingsService rs;
 
-    /** Only User-end Rating controls below this **/
+
     //To add a rating from User-end
     @PostMapping("/addRating")
     public Ratings addRating(Ratings ratings){
@@ -41,7 +41,6 @@ public class UserController {
         return us.getAllWP();
     }
 
-    /** Only the methods that call rest-template methods from services are below this comment**/
     //To add an order from User-end
     @PostMapping("/addOrder")
     public OrderDetails addOrder(@RequestBody OrderDetails orderDetails){

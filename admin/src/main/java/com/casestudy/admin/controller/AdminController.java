@@ -1,8 +1,6 @@
 package com.casestudy.admin.controller;
 
-import com.casestudy.admin.WrapperModel.WasherRatings;
 import com.casestudy.admin.model.OrderDetails;
-import com.casestudy.admin.model.User;
 import com.casestudy.admin.model.WashPacks;
 import com.casestudy.admin.service.AdminService;
 import com.casestudy.admin.service.WashPackService;
@@ -20,7 +18,7 @@ public class AdminController{
     @Autowired
     WashPackService wps;
 
-    /** Washer controls through admin using service object */
+
     //To find all the washpack
     @GetMapping("/findallWP")
     public List<WashPacks> findallWP(){
@@ -52,22 +50,11 @@ public class AdminController{
         return wps.findbyname(name);
     }
 
-    /** Order controls through admin using rest template */
+
     //To assign a washer to the order by Admin
     @PutMapping("/assignWasher")
     public OrderDetails assignWasher(@RequestBody OrderDetails orderDetails){
         return as.assignWasher(orderDetails);
     }
 
-    /** Washer controls through admin using rest template */
-    //To get one washer
-    @GetMapping("/oneWasher/{name}")
-    public User getOneWasher(@PathVariable String name){
-        return as.getOneWasher(name);
-    }
-    //To get all the ratings of a specific Washer
-    @GetMapping("/washerRating/{name}")
-    public WasherRatings washerSpecificRatings(@PathVariable String name){
-        return as.washerSpecificRatings(name);
-    }
 }

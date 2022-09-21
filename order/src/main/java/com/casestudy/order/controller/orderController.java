@@ -101,7 +101,7 @@ public class orderController {
     }
     //to assign the washer
     @PutMapping("/assignwasher/{orderId}")
-    public ResponseEntity<OrderDetails> assignWasher(@PathVariable String orderId,@RequestBody OrderDetails od){
+    public ResponseEntity<OrderDetails> assignWasher(@RequestBody OrderDetails od){
         OrderDetails existingOrder=or.findById(od.getOrderId()).orElseThrow(null);
         if(existingOrder.getWasherName().contains("NA")){
             existingOrder.setWasherName(od.getWasherName());

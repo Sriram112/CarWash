@@ -1,6 +1,4 @@
-package com.casestudy.admin.WrapperModel;
-
-import com.casestudy.admin.model.Ratings;
+package com.casestudy.admin.wrappermodel;
 
 import java.util.List;
 

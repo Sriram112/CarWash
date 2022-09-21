@@ -11,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -31,26 +32,31 @@ public class AdminApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AdminApplication.class, args);
 	}
+
 	@Bean
 	public Docket SwaggerConfig(){
-		//Returns a prepared docket instance
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
 				.paths(PathSelectors.ant("/admins/**"))
-				.apis(RequestHandlerSelectors.basePackage("casestudy.admin"))
+				.apis(RequestHandlerSelectors.basePackage("com.casestudy.admin"))
 				.build()
-				.apiInfo(apiinform());
+				.apiInfo(apiinfo());
 
 	}
-	private ApiInfo apiinform(){
-		return new ApiInfo(
-				"Admin",
-				"The Admin has all the below controls",
-				"1.0",
-				"Can be used by anyone testing the app",
-				new springfox.documentation.service.Contact("sriram","https://github.com/Sriram112","sriram@gmail.com"),
-				"API license",
-				"https://github.com/Sriram112",
-				Collections.emptyList());
+
+	public ApiInfo apiinfo() {
+
+		//List<VendorExtension> vendorExtensions = new ArrayList<>();
+		Contact contact = new Contact(
+				"Sriram",
+				"",
+				"sai@g.com"
+		);
+		ApiInfo apiInfo = new ApiInfo(
+				"user Service API",
+				"sample API for car wash web development project", "1.0",
+				"free to use", contact,
+				"", "", Collections.emptyList());
+		return apiInfo;
 	}
 }

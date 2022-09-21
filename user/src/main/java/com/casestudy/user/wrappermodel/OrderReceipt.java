@@ -1,4 +1,4 @@
-package com.casestudy.user.WrapperModel;
+package com.casestudy.user.wrappermodel;
 
 public class OrderReceipt {
         private String orderID;

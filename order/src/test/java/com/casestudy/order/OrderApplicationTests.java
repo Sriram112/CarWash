@@ -145,7 +145,7 @@ class OrderApplicationTests {
 		OrderDetails ExistingOrder = new OrderDetails("a", "z@gmail.com", "Noor", "pack_1", 1111115555, "888888", "NA", new Car(1, "BMW", "X5" ));
 		when(or.findById("a" )).thenReturn(Optional.of(ExistingOrder));
 		when(or.save(ExistingOrder)).thenReturn(ExistingOrder);
-		//assertThrows(APIRequestException.class, () -> oc.assignWasher(order));
+		assertThrows(APIRequestException.class, () -> oc.assignWasher(order));
 	}
 
 	@Test
@@ -157,19 +157,14 @@ class OrderApplicationTests {
 		when(or.findById("f" )).thenReturn(Optional.of(ExistedOrder));
 		when(or.save(ExistedOrder)).thenReturn(ExistedOrder);
 		String w = order.getWasherName();
-		//assertEquals(order.getWasherName(), oc.assignWasher(order).getBody().getWasherName());
+		assertEquals(order.getWasherName(), oc.assignWasher(order).getBody().getWasherName());
 		assertEquals("pending", ExistedOrder.getStatus());
 		System.out.println(ExistedOrder.getWasherName());
 		System.out.println(order.getWasherName());
 
 
 	}
-	/*@Test
-        public void findOrderByIdNotFoundExceptionTest(){
-            when(or.findById("a")).thenReturn(Optional.of(new orderDetails("a","z@gmail.com","gwen","pack_1",1111115555,"888888","pending",new Car(1,"BMW","X5"),"careful cleaning")));
-            //orderDetails order = new orderDetails("a","z@gmail.com","gwen","pack_1",1111115555,"888888","pending",new Car(1,"BMW","X5"),"careful cleaning");
-            assertThrows(APIRequestException.class,()->oc.findById("anyrandomId"));
-        }*/
+
 
 
 

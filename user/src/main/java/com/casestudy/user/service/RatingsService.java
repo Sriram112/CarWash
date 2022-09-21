@@ -1,6 +1,6 @@
 package com.casestudy.user.service;
 
-import com.casestudy.user.Repository.RatingRepo;
+import com.casestudy.user.repository.RatingRepo;
 import com.casestudy.user.model.Ratings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
