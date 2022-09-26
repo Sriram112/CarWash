@@ -1,12 +1,14 @@
 package com.casestudy.admin.service;
 
 import com.casestudy.admin.model.OrderDetails;
-import com.casestudy.admin.model.Ratings;
-import com.casestudy.admin.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.*;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,9 +18,9 @@ public class AdminService {
     private RestTemplate restTemplate;
 
     //Url to access the methods of Order Service
-    String url="http://ORDER/orders";
+    String url="http://order/orders";
     //Url to access the methods of User Service
-    String url2="http://USER/users";
+    String url2="http://user/users";
 
 
 

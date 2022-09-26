@@ -4,15 +4,19 @@ import com.casestudy.admin.model.OrderDetails;
 import com.casestudy.admin.model.WashPacks;
 import com.casestudy.admin.service.AdminService;
 import com.casestudy.admin.service.WashPackService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.Map;
 
 @RestController
 @RequestMapping("/admins")
-public class AdminController{
+public class AdminController {
+    Logger logger = LoggerFactory.getLogger(AdminController.class);
     @Autowired
     AdminService as;
     @Autowired
@@ -22,6 +26,7 @@ public class AdminController{
     //To find all the washpack
     @GetMapping("/findallWP")
     public List<WashPacks> findallWP(){
+        logger.info("controller accessed");
         return wps.findallWP();
     }
     //To find one WashPack with ID

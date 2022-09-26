@@ -1,11 +1,14 @@
 package com.casestudy.user.controller;
 
+import com.casestudy.order.controller.orderController;
 import com.casestudy.user.wrappermodel.OrderReceipt;
 import com.casestudy.user.model.OrderDetails;
 import com.casestudy.user.model.Ratings;
 import com.casestudy.user.model.WashPacks;
 import com.casestudy.user.service.RatingsService;
 import com.casestudy.user.service.userService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -13,6 +16,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/users")
 public class UserController {
+
+    Logger logger = LoggerFactory.getLogger(orderController.class);
+
     @Autowired
     private userService us;
     @Autowired
@@ -22,6 +28,7 @@ public class UserController {
     //To add a rating from User-end
     @PostMapping("/addRating")
     public Ratings addRating(Ratings ratings){
+        logger.info("controller accessed");
         return rs.addRating(ratings);
     }
     //For user to see ratings to decide the service

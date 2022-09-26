@@ -15,12 +15,15 @@ import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 import java.util.Collections;
 
+@SpringBootApplication
 @EnableEurekaClient
 @EnableSwagger2
-@SpringBootApplication
 public class AdminApplication {
+
+
 	@Autowired
 	private WashPackRepo wpr;
 
@@ -31,7 +34,7 @@ public class AdminApplication {
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(AdminApplication.class, args);
-	}
+}
 
 	@Bean
 	public Docket SwaggerConfig(){
@@ -46,7 +49,6 @@ public class AdminApplication {
 
 	public ApiInfo apiinfo() {
 
-		//List<VendorExtension> vendorExtensions = new ArrayList<>();
 		Contact contact = new Contact(
 				"Sriram",
 				"",

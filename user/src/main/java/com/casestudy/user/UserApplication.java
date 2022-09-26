@@ -45,7 +45,6 @@ public class UserApplication{
 	}
 	public ApiInfo apiinfo() {
 
-		//List<VendorExtension> vendorExtensions = new ArrayList<>();
 		Contact contact = new Contact(
 				"sriram",
 				"",

@@ -56,18 +56,6 @@ public class WasherApplication {
 				"", "", Collections.emptyList());
 		return apiInfo;
 	}
-//	private ApiInfo  apiinform(){
-//		return new ApiInfo(
-//				"Washers system",
-//				"The Washer has all the below controls",
-//				"1.0",
-//				"Can be used by anyone testing the app",
-//				new springfox.documentation.service.Contact("sriram","https://github.com/sriram112","sriram@gmail.com"),
-//				"API license",
-//				"https://github.com/sriram112",
-//				Collections.emptyList());
-//
-//
-//	}
+
 
 }

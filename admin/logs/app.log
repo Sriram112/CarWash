@@ -1,0 +1,5 @@
+2022-09-23 17:04:35,146 INFO com.casestudy.admin.AdminApplicationTests [main] Starting AdminApplicationTests using Java 18 on Sriram with PID 25440 (started by mohan in D:\car wash\admin)
+2022-09-23 17:04:35,151 DEBUG com.casestudy.admin.AdminApplicationTests [main] Running with Spring Boot v2.7.3, Spring v5.3.22
+2022-09-23 17:04:35,153 INFO com.casestudy.admin.AdminApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+2022-09-23 17:04:49,305 INFO com.casestudy.admin.AdminApplicationTests [main] Started AdminApplicationTests in 15.5 seconds (JVM running for 18.933)
+2022-09-23 17:04:49,442 INFO com.casestudy.admin.controller.AdminController [main] controller accessed

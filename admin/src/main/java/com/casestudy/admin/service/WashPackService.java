@@ -1,11 +1,12 @@
 package com.casestudy.admin.service;
 
+import com.casestudy.admin.exceptionHandler.API_exceptionHandler;
 import com.casestudy.admin.model.WashPacks;
 import com.casestudy.admin.repository.WashPackRepo;
-import com.casestudy.washer.exceptionHandler.API_requestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,7 +27,7 @@ public class WashPackService {
     }
     //To find one WashPack
     public ResponseEntity<WashPacks> findoneWP(String id){
-        WashPacks wp=wr.findById(id).orElseThrow(() ->  new API_requestException("Washpack with ID -> "+id+" not found"));
+        WashPacks wp=wr.findById(id).orElseThrow(() ->  new API_exceptionHandler("Washpack with ID -> "+id+" not found"));
         return ResponseEntity.ok(wp);
     }
     //To find washpack with washpack name for user's reciept
@@ -35,7 +36,7 @@ public class WashPackService {
     }
     //To delete a WashPack
     public ResponseEntity<Map<String,Boolean>> deleteWP(String id){
-        WashPacks wp=wr.findById(id).orElseThrow(() ->  new API_requestException("Washpack with ID -> "+id+" not found, deletion failed"));
+        WashPacks wp=wr.findById(id).orElseThrow(() ->  new API_exceptionHandler("Washpack with ID -> "+id+" not found, deletion failed"));
         wr.delete(wp);
         Map<String, Boolean> response = new HashMap<>();
         response.put("Washpack Deleted", Boolean.TRUE);
@@ -43,7 +44,7 @@ public class WashPackService {
     }
     //To update a WashPack
     public ResponseEntity<WashPacks> updateWP(String id,WashPacks washPacks) {
-        WashPacks existingWashPack = wr.findById(id).orElseThrow(() -> new API_requestException("Washpack with ID -> " + id + " not found, updating failed"));
+        WashPacks existingWashPack = wr.findById(id).orElseThrow(() -> new API_exceptionHandler("Washpack with ID -> " + id + " not found, updating failed"));
         //ID won't be updated ever
         existingWashPack.setName(washPacks.getName());
         existingWashPack.setCost(washPacks.getCost());

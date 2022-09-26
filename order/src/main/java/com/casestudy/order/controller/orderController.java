@@ -3,6 +3,8 @@ package com.casestudy.order.controller;
 import com.casestudy.order.exceptionHandlers.APIRequestException;
 import com.casestudy.order.models.OrderDetails;
 import com.casestudy.order.repository.orderRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,11 +18,16 @@ import java.util.stream.Collectors;
 @RequestMapping("/orders")
 public class orderController {
 
+    Logger logger = LoggerFactory.getLogger(orderController.class);
+
+
     @Autowired
     private orderRepository or;
     //to get all orders
     @GetMapping("/findall")
     public List<OrderDetails> findallOrders(){
+        logger.info("controller accessed");
+
         return or.findAll();
     }
     //to view the details of order by admin

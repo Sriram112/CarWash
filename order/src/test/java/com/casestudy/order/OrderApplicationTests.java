@@ -8,7 +8,6 @@ import com.casestudy.order.repository.orderRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.util.HashMap;
@@ -18,7 +17,6 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
 
@@ -59,7 +57,6 @@ class OrderApplicationTests {
 
 	@Test
 	public void addOrderTest() {
-		//orderDetails expectedOrder = new orderDetails("a","z@gmail.com","NA","pack_1",1111115555,"888888","NA",new Car(1,"BMW","X5"),"careful cleaning");
 		OrderDetails order = new OrderDetails("a", "z@gmail.com", "gwen", "pack_1", 1111115555, "888888", "Pending", new Car(1, "BMW", "X5" ) );
 		when(or.save(order)).thenReturn(order);
 		assertEquals("NA", oc.addOrder(order).getStatus());
@@ -78,25 +75,8 @@ class OrderApplicationTests {
 	}
 
 
-	@Test
-	public void updateStatusTest() {
-		OrderDetails order = new OrderDetails("a", "z@gmail.com", "gwen", "pack_1", 1111115555, "888888", "Pending", new Car(1, "BMW", "X5" ) );
-		when(or.findById("a" )).thenReturn(Optional.of(order));
-		//orderDetails order = new orderDetails("a","z@gmail.com","gwen","pack_1",1111115555,"888888","pending",new Car(1,"BMW","X5"),"careful cleaning");
-		when(or.save(order)).thenReturn(order);
-		assertEquals("Completed", oc.updateStatus("a" ).getBody().getStatus());
-	}
 
 
-
-	@Test
-	public void cancelOrderTest() {
-		OrderDetails order = new OrderDetails("a", "z@gmail.com", "NA", "pack_1", 1111115555, "888888", "NA", new Car(1, "BMW", "X5" ));
-		when(or.findById("a" )).thenReturn(Optional.of(order));
-		when(or.save(order)).thenReturn(order);
-		//assertEquals("The order with ID -> " + order.getOrderId() + " is cancelled successfully", oc.cancelOrder(order));
-		assertEquals("Cancelled", order.getStatus());
-	}
 
 	@Test
 	public void getMyOrdersTest() {
